@@ -3,6 +3,7 @@
 .env
 .flake8
 .gitattributes
+.pyirc
 .vscode/
 *.rej
 package.json

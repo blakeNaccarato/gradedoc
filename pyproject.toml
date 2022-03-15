@@ -1,18 +1,28 @@
 [build-system]
-requires = [ "flit_core >=3.3,<4",]
+requires = ["flit_core >=3.3,<4"]
 build-backend = "flit_core.buildapi"
 
 [project]
 name = "gradedoc"
 requires-python = ">=3.10"
-dependencies = [ "docxrev", "dynaconf", "fire", "natsort",]
+dependencies = ["docxrev", "dynaconf", "fire", "natsort"]
 readme = "README.md"
-dynamic = [ "version", "description",]
+dynamic = ["version", "description"]
 [[project.authors]]
 name = "Blake Naccarato"
 email = "blake.naccarato+gradedoc@gmail.com"
 
 [project.urls]
 Home = "https://github.com/blakeNaccarato/gradedoc"
+
+[project.scripts]
+add_template_comments = "gradedoc.add_template_comments:main"
+close_all = "gradedoc.close_all:main"
+delete_all_comments = "gradedoc.delete_all_comments:main"
+open_all = "gradedoc.open_all:main"
+save_all = "gradedoc.save_all:main"
+toggle_active_review_pane = "gradedoc.toggle_active_review_pane:main"
+update_active_grade = "gradedoc.update_active_grade:main"
+update_all_grades = "gradedoc.update_all_grades:main"
 
 [project.optional-dependencies]

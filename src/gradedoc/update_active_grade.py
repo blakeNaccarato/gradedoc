@@ -14,6 +14,10 @@ from gradedoc.shared import Path
 from gradedoc.update_grade import update_grade
 
 
+def main():
+    fire.Fire(update_active_grade)
+
+
 def update_active_grade(
     directory: Optional[Path] = None, gradebook_path: Optional[Path] = None
 ):

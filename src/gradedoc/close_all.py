@@ -11,6 +11,10 @@ from gradedoc import shared
 from gradedoc.shared import Path
 
 
+def main():
+    fire.Fire(close_all)
+
+
 def close_all(directory: Optional[Path] = None):
     """Save and close all documents.
 

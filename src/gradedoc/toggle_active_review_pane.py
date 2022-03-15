@@ -12,6 +12,10 @@ from gradedoc import shared
 from gradedoc.shared import Path
 
 
+def main():
+    fire.Fire(toggle_active_review_pane)
+
+
 def toggle_active_review_pane(directory: Optional[Path] = None):
     """Toggle the review pane of the active document.
 

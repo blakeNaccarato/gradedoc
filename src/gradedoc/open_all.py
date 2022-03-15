@@ -12,6 +12,10 @@ from gradedoc import shared
 from gradedoc.shared import Path
 
 
+def main():
+    fire.Fire(open_all)
+
+
 def open_all(directory: Optional[Path] = None):
     """Open all documents in preparation for grading.
 

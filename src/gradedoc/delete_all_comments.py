@@ -11,6 +11,10 @@ from gradedoc import shared
 from gradedoc.shared import Path
 
 
+def main():
+    fire.Fire(delete_all_comments)
+
+
 def delete_all_comments(directory: Optional[Path] = None):
     """Delete all comments from all documents.
 

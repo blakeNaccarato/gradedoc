@@ -12,6 +12,10 @@ from gradedoc import shared
 from gradedoc.shared import Path
 
 
+def main():
+    fire.Fire(add_template_comments)
+
+
 def add_template_comments(directory: Optional[Path] = None):
     """Add template comments to all documents.
 

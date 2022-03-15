@@ -12,6 +12,10 @@ from gradedoc.shared import Path
 from gradedoc.update_grade import update_grade
 
 
+def main():
+    fire.Fire(update_all_grades)
+
+
 def update_all_grades(
     directory: Optional[Path] = None, gradebook_path: Optional[Path] = None
 ):

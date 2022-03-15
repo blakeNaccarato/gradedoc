@@ -84,7 +84,7 @@ def grade_document(document: docxrev.Document) -> Grade:
                     comment.update(
                         first_line_of_comment
                         + "\n\n"
-                        + all_deductions[first_match["code"]]
+                        + all_deductions.codes[first_match["code"]]
                     )
                     deduction_codes.append(first_match["code"])
 

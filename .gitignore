@@ -2,7 +2,7 @@
 # * PROJECT-SPECIFIC
 
 submissions
-/deductions*.yaml
+/config*.yaml
 /.env
 *.docx
 *.csv

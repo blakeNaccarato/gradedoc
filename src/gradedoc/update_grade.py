@@ -10,7 +10,7 @@ import docxrev
 from natsort import natsorted
 
 from gradedoc import shared
-from gradedoc.deductions import all_deductions
+from gradedoc.configs import config
 
 __all__ = ["update_grade"]
 
@@ -54,7 +54,7 @@ def grade_document(document: docxrev.Document) -> Grade:
     scores: List[int] = []
     header_comments: List[docxrev.com.Comment] = []
     deductions = 0
-    deduction_codes: List[str] = []
+    codes: List[str] = []
 
     # Get the scores for each section
     comment = safe_next(comments)
@@ -84,9 +84,9 @@ def grade_document(document: docxrev.Document) -> Grade:
                     comment.update(
                         first_line_of_comment
                         + "\n\n"
-                        + all_deductions.codes[first_match["code"]]
+                        + config.codes[first_match["code"]]
                     )
-                    deduction_codes.append(first_match["code"])
+                    codes.append(first_match["code"])
 
             # Try to get the next comment, raising an error if there are none left
             comment = safe_next(comments)
@@ -100,9 +100,7 @@ def grade_document(document: docxrev.Document) -> Grade:
 
     header_comments.reverse()
     scores.reverse()
-    return Grade(
-        header_comments, scores, deductions, "; ".join(natsorted(deduction_codes))
-    )
+    return Grade(header_comments, scores, deductions, "; ".join(natsorted(codes)))
 
 
 def update_document_scores(document: docxrev.Document, grade: Grade):

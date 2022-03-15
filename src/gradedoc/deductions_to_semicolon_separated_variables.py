@@ -2,10 +2,10 @@ import csv
 
 import yaml
 
-with open("deductions_common.yaml") as file:
-    all_deductions = yaml.safe_load(file)
+with open("config.yaml") as file:
+    all_codes = yaml.safe_load(file)
 
-with open("deductions.csv", "w", newline="") as file:
+with open("codes.csv", "w", newline="") as file:
     writer = csv.writer(file, delimiter=";")
-    for key, value in all_deductions.items():
+    for key, value in all_codes.items():
         writer.writerow([key, value])

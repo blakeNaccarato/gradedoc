@@ -4,9 +4,9 @@ from shutil import copytree
 CWD = Path.cwd()
 
 
-def copy_scripts(path: Path = CWD):
+def copy_example(path: Path = CWD):
     """Copy AutoHotkey scripts to the current directory."""
     import gradedoc
 
-    scripts = Path(gradedoc.__file__).parent / "scripts"
+    scripts = Path(gradedoc.__file__).parent / "example"
     copytree(scripts, path / scripts.name)

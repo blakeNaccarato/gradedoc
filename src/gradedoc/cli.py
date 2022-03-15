@@ -3,7 +3,7 @@ import fire
 
 from gradedoc.add_template_comments import add_template_comments
 from gradedoc.close_all import close_all
-from gradedoc.copy_scripts import copy_scripts
+from gradedoc.copy_example import copy_example
 from gradedoc.delete_all_comments import delete_all_comments
 from gradedoc.open_all import open_all
 from gradedoc.save_all import save_all
@@ -16,7 +16,7 @@ def main():
     fire.Fire(
         {
             "addcom": add_template_comments,
-            "copyscripts": copy_scripts,
+            "example": copy_example,
             "close": close_all,
             "delcom": delete_all_comments,
             "open": open_all,

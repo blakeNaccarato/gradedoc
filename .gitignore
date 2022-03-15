@@ -2,8 +2,7 @@
 # * PROJECT-SPECIFIC
 
 submissions
-/config*.yaml
-/.env
+example
 *.docx
 *.csv
 *.xlsx

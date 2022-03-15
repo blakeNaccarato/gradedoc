@@ -91,26 +91,4 @@ COMMON_DEDUCTION_PATTERNS = [
 
 
 def get_paths() -> Tuple[Iterator[Path], Path]:
-    """Get paths to all documents in a directory and the gradebook.
-
-    Get paths to all documents in whichever comes first of the following: `directory`,
-    the environment variable `DOCX_DIRECTORY`, or the current working directory. Also
-    get the path to the gradebook (default "grades.csv"), which is put in the same
-    directory as the documents.
-
-    Parameters
-    ----------
-    directory
-        The directory to get documents from.
-    gradebook_name
-        The name of the gradebook. Defaults to "grades.csv".
-
-    Returns
-    -------
-    paths
-        Paths to documents.
-    gradebook_path
-        Path to the gradebook.
-    """
-
     return PATHS, GRADEBOOK_PATH

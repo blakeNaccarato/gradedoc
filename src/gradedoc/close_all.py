@@ -5,14 +5,9 @@ from __future__ import annotations
 from typing import Optional
 
 import docxrev
-import fire
 
 from gradedoc import shared
 from gradedoc.shared import Path
-
-
-def main():
-    fire.Fire(close_all)
 
 
 def close_all(directory: Optional[Path] = None):
@@ -32,7 +27,3 @@ def close_all(directory: Optional[Path] = None):
         document = docxrev.Document(path, save_on_exit=True, close_on_exit=True)
         with document:
             pass
-
-
-if __name__ == "__main__":
-    fire.Fire(close_all)

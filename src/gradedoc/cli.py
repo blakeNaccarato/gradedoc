@@ -1,8 +1,9 @@
+import docxrev
 import fire
 
 from gradedoc.add_template_comments import add_template_comments
-from gradedoc.copy_scripts import copy_scripts
 from gradedoc.close_all import close_all
+from gradedoc.copy_scripts import copy_scripts
 from gradedoc.delete_all_comments import delete_all_comments
 from gradedoc.open_all import open_all
 from gradedoc.save_all import save_all
@@ -25,3 +26,4 @@ def main():
             "all": update_all_grades,
         }
     )
+    docxrev.quit_word_safely()  # If used as a CLI, quit Word if nothing was open

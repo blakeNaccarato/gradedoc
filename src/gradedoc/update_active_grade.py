@@ -7,15 +7,10 @@ from typing import Optional
 from warnings import warn
 
 import docxrev
-import fire
 
 from gradedoc import shared
 from gradedoc.shared import Path
 from gradedoc.update_grade import update_grade
-
-
-def main():
-    fire.Fire(update_active_grade)
 
 
 def update_active_grade(
@@ -55,8 +50,3 @@ def update_active_grade(
             update_grade(active_document, gradebook_path)
         else:
             raise Exception("Active document not in paths.")
-
-
-if __name__ == "__main__":
-    fire.Fire(update_active_grade)  # CLI
-    docxrev.quit_word_safely()  # If used as a CLI, quit Word if nothing was open

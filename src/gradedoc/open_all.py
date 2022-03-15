@@ -5,15 +5,10 @@ from __future__ import annotations
 from typing import Optional
 
 import docxrev
-import fire
 from win32com.client import constants
 
 from gradedoc import shared
 from gradedoc.shared import Path
-
-
-def main():
-    fire.Fire(open_all)
 
 
 def open_all(directory: Optional[Path] = None):
@@ -33,7 +28,3 @@ def open_all(directory: Optional[Path] = None):
         with document:
             # Open the revisions pane.
             document.com.ActiveWindow.View.SplitSpecial = constants.wdPaneRevisions
-
-
-if __name__ == "__main__":
-    fire.Fire(open_all)

@@ -5,15 +5,10 @@ from __future__ import annotations
 from typing import Optional
 
 import docxrev
-import fire
 
 from gradedoc import shared
 from gradedoc.shared import Path
 from gradedoc.update_grade import update_grade
-
-
-def main():
-    fire.Fire(update_all_grades)
 
 
 def update_all_grades(
@@ -37,8 +32,3 @@ def update_all_grades(
     for path in paths:
         document = docxrev.Document(path)
         update_grade(document, gradebook_path)
-
-
-if __name__ == "__main__":
-    fire.Fire(update_all_grades)  # CLI
-    docxrev.quit_word_safely()  # If used as a CLI, quit Word if nothing was open

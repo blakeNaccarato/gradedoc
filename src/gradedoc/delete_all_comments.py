@@ -5,14 +5,9 @@ from __future__ import annotations
 from typing import Optional
 
 import docxrev
-import fire
 
 from gradedoc import shared
 from gradedoc.shared import Path
-
-
-def main():
-    fire.Fire(delete_all_comments)
 
 
 def delete_all_comments(directory: Optional[Path] = None):
@@ -36,8 +31,3 @@ def delete_all_comments(directory: Optional[Path] = None):
             docxrev.Document(path).delete_comments()
     else:
         print("Not deleting comments.")
-
-
-if __name__ == "__main__":
-    fire.Fire(delete_all_comments)  # CLI
-    docxrev.quit_word_safely()  # If used as a CLI, quit Word if nothing was open

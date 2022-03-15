@@ -5,15 +5,10 @@ from __future__ import annotations
 from typing import Optional
 
 import docxrev
-import fire
 from win32com.client import constants
 
 from gradedoc import shared
 from gradedoc.shared import Path
-
-
-def main():
-    fire.Fire(toggle_active_review_pane)
 
 
 def toggle_active_review_pane(directory: Optional[Path] = None):
@@ -42,8 +37,3 @@ def toggle_active_review_pane(directory: Optional[Path] = None):
             )
         else:
             raise Exception("Active document not in paths.")
-
-
-if __name__ == "__main__":
-    fire.Fire(toggle_active_review_pane)  # CLI
-    docxrev.quit_word_safely()  # If used as a CLI, quit Word if nothing was open

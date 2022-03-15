@@ -5,15 +5,10 @@ from __future__ import annotations
 from typing import Optional
 
 import docxrev
-import fire
 from win32com.client import constants
 
 from gradedoc import shared
 from gradedoc.shared import Path
-
-
-def main():
-    fire.Fire(add_template_comments)
 
 
 def add_template_comments(directory: Optional[Path] = None):
@@ -76,8 +71,3 @@ def add_template_comments(directory: Optional[Path] = None):
 
             # Go back to the top of the document when done
             com_selection.HomeKey(constants.wdStory)
-
-
-if __name__ == "__main__":
-    fire.Fire(add_template_comments)  # CLI
-    docxrev.quit_word_safely()  # If used as a CLI, quit Word if nothing was open

@@ -2,31 +2,19 @@
 
 from __future__ import annotations
 
-from typing import Optional
-
 import docxrev
 
 from gradedoc import shared
-from gradedoc.shared import Path
 
 
-def delete_all_comments(directory: Optional[Path] = None):
-    """Delete all comments from all documents.
-
-    Delete all comments from all documents in `directory` as specified in
-    :py:func:`shared.get_paths`.
-
-    Parameters
-    ----------
-    directory
-        The directory containing the documents.
-    """
+def delete_all_comments():
+    """Delete all comments from all documents."""
 
     response = input(  # nosec
         "Are you sure you want to delete all comments? [y/N] >>> "
     )
     if response.lower() == "y":
-        (paths, _) = shared.get_paths(directory)
+        (paths, _) = shared.get_paths()
         for path in paths:
             docxrev.Document(path).delete_comments()
     else:

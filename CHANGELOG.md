@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Implement CLI
 - Implement AutoHotkey scripts for common actions
+- Expect `docx_dir` to be supplied in config file only
 
 ## [0.0.1]
 

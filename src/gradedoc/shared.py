@@ -3,33 +3,24 @@
 
 from __future__ import annotations
 
-import os
 from pathlib import Path
 import re
-from typing import Iterator, Optional, Tuple
+from typing import Iterator, Tuple
 
-__all__ = ["get_paths"]
-
+from gradedoc.configs import config
 
 # * -------------------------------------------------------------------------------- * #
 # * PATHS
 
-ENV_KEYS = ["GRADEBOOK_NAME", "DOCX_DIRECTORY"]
-ENV = {key: os.getenv(key) for key in ENV_KEYS}
-
-if ENV["GRADEBOOK_NAME"] is None:
-    GRADEBOOK_NAME = "grades.csv"
+if docx_dir := config.get("docx_dir"):
+    docx_dir = Path(docx_dir)
 else:
-    GRADEBOOK_NAME = ENV["GRADEBOOK_NAME"]
-
-if ENV["DOCX_DIRECTORY"] is None:
-    DOCX_DIRECTORY = Path().cwd() / "submissions"
-else:
-    DOCX_DIRECTORY = Path(ENV["DOCX_DIRECTORY"])
+    docx_dir = Path().cwd() / "submissions"
 
 DOCX = r"[!~$]*.docx"  # excludes "~$" prefix temporary files
-PATHS = DOCX_DIRECTORY.glob(DOCX)
-GRADEBOOK_PATH = DOCX_DIRECTORY / GRADEBOOK_NAME
+PATHS = docx_dir.glob(DOCX)
+GRADEBOOK_NAME = "grades.csv"
+GRADEBOOK_PATH = Path(docx_dir / GRADEBOOK_NAME)
 
 
 # * -------------------------------------------------------------------------------- * #
@@ -99,10 +90,7 @@ COMMON_DEDUCTION_PATTERNS = [
 # * FUNCTIONS
 
 
-def get_paths(
-    directory: Optional[Path] = None,
-    gradebook_name: Optional[str] = GRADEBOOK_NAME,
-) -> Tuple[Iterator[Path], Path]:
+def get_paths() -> Tuple[Iterator[Path], Path]:
     """Get paths to all documents in a directory and the gradebook.
 
     Get paths to all documents in whichever comes first of the following: `directory`,
@@ -125,15 +113,4 @@ def get_paths(
         Path to the gradebook.
     """
 
-    if directory is None:
-        paths = PATHS
-    else:
-        docx_directory = Path(directory)
-        paths = docx_directory.glob(DOCX)
-
-    if gradebook_name is None:
-        gradebook_name = GRADEBOOK_NAME
-    else:
-        gradebook_path = DOCX_DIRECTORY / GRADEBOOK_NAME
-
-    return paths, gradebook_path
+    return PATHS, GRADEBOOK_PATH

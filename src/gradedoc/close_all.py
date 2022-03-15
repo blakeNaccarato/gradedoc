@@ -2,27 +2,15 @@
 
 from __future__ import annotations
 
-from typing import Optional
-
 import docxrev
 
 from gradedoc import shared
-from gradedoc.shared import Path
 
 
-def close_all(directory: Optional[Path] = None):
-    """Save and close all documents.
+def close_all():
+    """Save and close all documents."""
 
-    Save and close all documents in `directory` as specified in
-    :py:func:`shared.get_paths`.
-
-    Parameters
-    ----------
-    directory
-        The directory containing the documents.
-    """
-
-    (paths, _) = shared.get_paths(directory)
+    (paths, _) = shared.get_paths()
     for path in paths:
         document = docxrev.Document(path, save_on_exit=True, close_on_exit=True)
         with document:

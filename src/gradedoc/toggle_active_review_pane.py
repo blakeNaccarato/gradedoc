@@ -2,29 +2,16 @@
 
 from __future__ import annotations
 
-from typing import Optional
-
 import docxrev
 from win32com.client import constants
 
 from gradedoc import shared
-from gradedoc.shared import Path
 
 
-def toggle_active_review_pane(directory: Optional[Path] = None):
-    """Toggle the review pane of the active document.
+def toggle_active_review_pane():
+    """Toggle the review pane of the active document."""
 
-    Update the grade from the active document, and the gradebook. Ensure that the active
-    Ensure that the active document and gradebook is as as specified in
-    :py:func:`shared.get_paths`.
-
-    Parameters
-    ----------
-    directory
-        The directory where the active document should reside.
-    """
-
-    (paths, _) = shared.get_paths(directory)
+    (paths, _) = shared.get_paths()
 
     active_document = docxrev.get_active_document(save_on_exit=False)
     with active_document:

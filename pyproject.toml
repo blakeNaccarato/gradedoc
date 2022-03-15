@@ -16,13 +16,6 @@ email = "blake.naccarato+gradedoc@gmail.com"
 Home = "https://github.com/blakeNaccarato/gradedoc"
 
 [project.scripts]
-add_template_comments = "gradedoc.add_template_comments:main"
-close_all = "gradedoc.close_all:main"
-delete_all_comments = "gradedoc.delete_all_comments:main"
-open_all = "gradedoc.open_all:main"
-save_all = "gradedoc.save_all:main"
-toggle_active_review_pane = "gradedoc.toggle_active_review_pane:main"
-update_active_grade = "gradedoc.update_active_grade:main"
-update_all_grades = "gradedoc.update_all_grades:main"
+gradedoc = "gradedoc.cli:main"
 
 [project.optional-dependencies]

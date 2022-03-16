@@ -15,7 +15,9 @@ from gradedoc.configs import config
 if docx_dir := config.get("docx_dir"):
     docx_dir = Path(docx_dir)
 else:
-    docx_dir = Path().cwd() / "submissions"
+    docx_dir = Path().cwd()
+
+print(docx_dir)
 
 DOCX = r"[!~$]*.docx"  # excludes "~$" prefix temporary files
 PATHS = docx_dir.glob(DOCX)

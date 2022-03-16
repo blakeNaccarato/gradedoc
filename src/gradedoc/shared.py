@@ -17,8 +17,6 @@ if docx_dir := config.get("docx_dir"):
 else:
     docx_dir = Path().cwd()
 
-print(docx_dir)
-
 DOCX = r"[!~$]*.docx"  # excludes "~$" prefix temporary files
 PATHS = docx_dir.glob(DOCX)
 GRADEBOOK_NAME = "grades.csv"

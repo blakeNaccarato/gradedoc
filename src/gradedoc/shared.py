@@ -27,24 +27,25 @@ GRADEBOOK_PATH = Path(docx_dir / GRADEBOOK_NAME)
 # * COMMENTS
 # Patterns here use named groups to be reused during replacement operations.
 
+if headers := config.get("headers"):
+    header_names = headers.keys()
+    max_scores = headers.values()
+else:
+    header_names = [
+        "abstract",
+        "introduction and theory",
+        "procedures",
+        "results and discussion",
+        "conclusion",
+    ]
+    max_scores = [10, 20, 20, 40, 10]
+
 # For searching document content to insert comments
-HEADERS = [
-    "abstract",
-    "introduction",
-    "procedures",
-    "results and discussion",
-    "conclusion",
-]
+HEADERS = header_names
 
 # For the actual content of the inserted comments
-FULL_HEADERS = [
-    "abstract",
-    "introduction and theory",  # different
-    "procedures",
-    "results and discussion",
-    "conclusion",
-]
-MAX_SCORES = [10, 20, 20, 40, 10]
+FULL_HEADERS = HEADERS
+MAX_SCORES = max_scores
 
 # The summary to be inserted and its pattern for later updating by regex
 SUMMARY_COMMENT = "TOTAL CONTENT: 100\nTOTAL DEDUCTIONS: 0\nGRADE: 100/100"

@@ -1,6 +1,13 @@
 # Supply the directory of reports that you are grading. Make sure it is a single-quoted string (e.g. '<my path>' and not "<my path>") so that the backslashes are properly handled.
 docx_dir: 'C:Users\YOUR_USERNAME\Desktop\submissions'
 
+headers:
+  abstract: 10
+  introduction and theory: 20
+  procedures: 20
+  results and discussion: 40
+  conclusion: 10
+
 codes:
   # General
 

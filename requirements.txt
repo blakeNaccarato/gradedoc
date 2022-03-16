@@ -3,3 +3,4 @@ docxrev
 dynaconf
 fire
 natsort
+rich

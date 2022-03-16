@@ -5,7 +5,7 @@ build-backend = "flit_core.buildapi"
 [project]
 name = "gradedoc"
 requires-python = ">=3.10"
-dependencies = ["docxrev", "dynaconf", "fire", "natsort"]
+dependencies = ["docxrev", "dynaconf", "fire", "natsort", "rich"]
 readme = "README.md"
 dynamic = ["version", "description"]
 [[project.authors]]

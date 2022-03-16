@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Nothing yet
+
+## [0.0.3]
+
 - Make headings flexible
 - Search current working directory for DOCX files by default
 - Use `rich` for prettier tracebacks
@@ -23,6 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Migrate `grade-me380`
 
-[Unreleased]: https://github.com/blakeNaccarato/gradedoc/compare/0.0.2...HEAD
+[Unreleased]: https://github.com/blakeNaccarato/gradedoc/compare/0.0.3...HEAD
+[0.0.3]: https://github.com/blakeNaccarato/gradedoc/compare/0.0.2...0.0.3
 [0.0.2]: https://github.com/blakeNaccarato/gradedoc/compare/0.0.1...0.0.2
 [0.0.1]: https://github.com/blakeNaccarato/gradedoc/releases/tag/0.0.1

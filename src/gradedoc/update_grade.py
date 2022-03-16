@@ -100,7 +100,7 @@ def grade_document(document: docxrev.Document) -> Grade:
 
     header_comments.reverse()
     scores.reverse()
-    return Grade(header_comments, scores, deductions, "; ".join(natsorted(codes)))
+    return Grade(header_comments, scores, deductions, "; ".join(natsorted(codes)))  # type: ignore
 
 
 def update_document_scores(document: docxrev.Document, grade: Grade):
@@ -227,7 +227,7 @@ def safe_next(comments: Iterator[docxrev.com.Comment]) -> docxrev.com.Comment:
             )
         else:
             message = "No comments in document."
-        raise error(message) from error
+        raise StopIteration(message) from error
 
     return comment
 

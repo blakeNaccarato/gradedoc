@@ -79,14 +79,17 @@ def grade_document(document: docxrev.Document) -> Grade:
             ]
             if any(matches):
                 first_match = [match for match in matches if match][0]
-                if "D" not in first_match["code"]:  # Skip if this is a custom deduction
+                code = first_match["code"]
+                if "D" not in code:  # Skip if this is a custom deduction
+                    try:
+                        feedback = config.codes[code]
+                    except KeyError as error:
+                        raise KeyError(
+                            f"No entry in configs for code {code}."
+                        ) from error
                     first_line_of_comment = comment.text.split("\r", maxsplit=1)[0]
-                    comment.update(
-                        first_line_of_comment
-                        + "\n\n"
-                        + config.codes[first_match["code"]]
-                    )
-                    codes.append(first_match["code"])
+                    comment.update(first_line_of_comment + "\n\n" + feedback)
+                    codes.append(code)
 
             # Try to get the next comment, raising an error if there are none left
             comment = safe_next(comments)

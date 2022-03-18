@@ -1,3 +1,4 @@
+from contextlib import contextmanager
 import docxrev
 import fire
 
@@ -13,17 +14,25 @@ from gradedoc.update_all_grades import update_all_grades
 
 
 def main():
-    fire.Fire(
-        {
-            "addcom": add_template_comments,
-            "example": copy_example,
-            "close": close_all,
-            "delcom": delete_all_comments,
-            "open": open_all,
-            "save": save_all,
-            "pane": toggle_active_review_pane,
-            "active": update_active_grade,
-            "all": update_all_grades,
-        }
-    )
-    docxrev.quit_word_safely()  # If used as a CLI, quit Word if nothing was open
+    with word():
+        fire.Fire(
+            {
+                "addcom": add_template_comments,
+                "example": copy_example,
+                "close": close_all,
+                "delcom": delete_all_comments,
+                "open": open_all,
+                "save": save_all,
+                "pane": toggle_active_review_pane,
+                "active": update_active_grade,
+                "all": update_all_grades,
+            }
+        )
+
+
+@contextmanager
+def word():
+    try:
+        yield
+    finally:
+        docxrev.quit_word_safely()  # If used as a CLI, quit Word if nothing was open

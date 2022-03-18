@@ -32,7 +32,7 @@ def update_grade(document: docxrev.Document, gradebook_path: os.PathLike):
         update_gradebook(document, gradebook_path, grade)
 
 
-def grade_document(document: docxrev.Document) -> Grade:
+def grade_document(document: docxrev.Document) -> Grade:  # noqa: C901
     """Grade a document.
 
     Parameters
@@ -92,7 +92,13 @@ def grade_document(document: docxrev.Document) -> Grade:
                     codes.append(code)
 
             # Try to get the next comment, raising an error if there are none left
-            comment = safe_next(comments)
+            try:
+                comment = safe_next(comments)
+            except StopIteration as error:
+                raise StopIteration(
+                    "No comments in document, or template comments are out of order.\n"
+                    f"Document: {document.name}"
+                ) from error
 
         # We found a header comment. Store it and move on.
         header_comments.append(comment)

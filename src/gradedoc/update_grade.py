@@ -10,6 +10,7 @@ import docxrev
 from natsort import natsorted
 
 from gradedoc import shared
+from gradedoc.toggle_active_review_pane import toggle_review_pane
 from gradedoc.configs import config
 
 __all__ = ["update_grade"]
@@ -30,6 +31,7 @@ def update_grade(document: docxrev.Document, gradebook_path: os.PathLike):
         grade = grade_document(document)
         update_document_scores(document, grade)
         update_gradebook(document, gradebook_path, grade)
+        toggle_review_pane(document)
 
 
 def grade_document(document: docxrev.Document) -> Grade:  # noqa: C901

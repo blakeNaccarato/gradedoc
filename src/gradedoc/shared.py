@@ -18,7 +18,7 @@ else:
     docx_dir = Path().cwd()
 
 DOCX = r"[!~$]*.docx"  # excludes "~$" prefix temporary files
-PATHS = docx_dir.resolve().glob(DOCX)
+PATHS = list(docx_dir.resolve().glob(DOCX))
 GRADEBOOK_NAME = "grades.csv"
 GRADEBOOK_PATH = Path(docx_dir / GRADEBOOK_NAME)
 

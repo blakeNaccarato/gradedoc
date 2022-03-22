@@ -1,5 +1,12 @@
 from contextlib import contextmanager
-import docxrev
+
+try:
+    import docxrev
+except TypeError as error:
+    raise TypeError(
+        "Cannot access the document. Save the document, close it,\n"
+        "then re-open it and try again."
+    ) from error
 import fire
 
 from gradedoc.add_template_comments import add_template_comments

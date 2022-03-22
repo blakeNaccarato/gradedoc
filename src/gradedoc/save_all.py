@@ -2,7 +2,13 @@
 
 from __future__ import annotations
 
-import docxrev
+try:
+    import docxrev
+except TypeError as error:
+    raise TypeError(
+        "Cannot access the document. Save the document, close it,\n"
+        "then re-open it and try again."
+    ) from error
 
 from gradedoc import shared
 

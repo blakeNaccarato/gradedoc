@@ -6,7 +6,13 @@ import os
 from dataclasses import dataclass
 from typing import Any, Iterator, List
 
-import docxrev
+try:
+    import docxrev
+except TypeError as error:
+    raise TypeError(
+        "Cannot access the document. Save the document, close it,\n"
+        "then re-open it and try again."
+    ) from error
 from natsort import natsorted
 
 from gradedoc import shared

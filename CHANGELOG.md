@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Nothing yet
+
+## [0.0.8]
+
 - Clarify "Caller was rejected by the callee," error message
 
 ## [0.0.7]
@@ -46,7 +50,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Migrate `grade-me380`
 
-[Unreleased]: https://github.com/blakeNaccarato/gradedoc/compare/0.0.7...HEAD
+[Unreleased]: https://github.com/blakeNaccarato/gradedoc/compare/0.0.8...HEAD
+[0.0.8]: https://github.com/blakeNaccarato/gradedoc/compare/0.0.7...0.0.8
 [0.0.7]: https://github.com/blakeNaccarato/gradedoc/compare/0.0.6...0.0.7
 [0.0.6]: https://github.com/blakeNaccarato/gradedoc/compare/0.0.5...0.0.6
 [0.0.5]: https://github.com/blakeNaccarato/gradedoc/compare/0.0.4...0.0.5

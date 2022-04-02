@@ -1,4 +1,5 @@
 from contextlib import contextmanager
+import pywintypes
 
 try:
     import docxrev
@@ -22,19 +23,25 @@ from gradedoc.update_all_grades import update_all_grades
 
 def main():
     with word():
-        fire.Fire(
-            {
-                "addcom": add_template_comments,
-                "example": copy_example,
-                "close": close_all,
-                "delcom": delete_all_comments,
-                "open": open_all,
-                "save": save_all,
-                "pane": toggle_active_review_pane,
-                "active": update_active_grade,
-                "all": update_all_grades,
-            }
-        )
+        try:
+            fire.Fire(
+                {
+                    "addcom": add_template_comments,
+                    "example": copy_example,
+                    "close": close_all,
+                    "delcom": delete_all_comments,
+                    "open": open_all,
+                    "save": save_all,
+                    "pane": toggle_active_review_pane,
+                    "active": update_active_grade,
+                    "all": update_all_grades,
+                }
+            )
+        except pywintypes.com_error as error:
+            raise TypeError(
+                "Cannot access the document. Save the document, close it,\n"
+                "then re-open it and try again."
+            ) from error
 
 
 @contextmanager
@@ -42,4 +49,10 @@ def word():
     try:
         yield
     finally:
-        docxrev.quit_word_safely()  # If used as a CLI, quit Word if nothing was open
+        try:
+            docxrev.quit_word_safely()  # If used as a CLI, quit Word if nothing was open
+        except pywintypes.com_error as error:
+            raise TypeError(
+                "Cannot access the document. Save the document, close it,\n"
+                "then re-open it and try again."
+            ) from error

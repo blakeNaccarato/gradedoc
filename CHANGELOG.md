@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 - Update rich requirement from \~=12.0.0 to \~=12.0.1
+- Handle `com_error` in a number of places. Still need to reduce duplication of this error-handling code.
 
 ## [0.0.8]
 

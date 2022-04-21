@@ -5,7 +5,7 @@ from __future__ import annotations
 
 from pathlib import Path
 import re
-from typing import Iterator, Tuple
+from typing import Tuple
 
 from gradedoc.configs import config
 
@@ -91,5 +91,5 @@ COMMON_DEDUCTION_PATTERNS = [
 # * FUNCTIONS
 
 
-def get_paths() -> Tuple[Iterator[Path], Path]:
+def get_paths() -> Tuple[list[Path], Path]:
     return PATHS, GRADEBOOK_PATH

@@ -4,6 +4,7 @@ from __future__ import annotations
 import csv
 import os
 from dataclasses import dataclass
+from pathlib import Path
 from typing import Any, Iterator, List
 
 try:
@@ -16,13 +17,13 @@ except TypeError as error:
 from natsort import natsorted
 
 from gradedoc import shared
-from gradedoc.toggle_active_review_pane import toggle_review_pane
 from gradedoc.configs import config
+from gradedoc.toggle_active_review_pane import toggle_review_pane
 
 __all__ = ["update_grade"]
 
 
-def update_grade(document: docxrev.Document, gradebook_path: os.PathLike):
+def update_grade(document: docxrev.Document, gradebook_path: Path):
     """Update a document's grade as well as the gradebook.
 
     Parameters
@@ -150,9 +151,7 @@ def update_document_scores(document: docxrev.Document, grade: Grade):
         comment.update(pattern.sub(substitution, comment.text))
 
 
-def update_gradebook(
-    document: docxrev.Document, gradebook_path: os.PathLike, grade: Grade
-):
+def update_gradebook(document: docxrev.Document, gradebook_path: Path, grade: Grade):
     """Write the grade for the paper being graded to a CSV file.
 
     Parameters

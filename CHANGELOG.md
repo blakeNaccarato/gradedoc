@@ -14,7 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Handle `com_error` in a number of places. Still need to reduce duplication of this error-handling code
-- Update to upstream dependency `docxrev` fixes `gradedoc close` hang [#18](https://github.com/blakeNaccarato/gradedoc/issues/18)
+- Update to upstream dependency `docxrev` fixes `gradedoc close` hang ([#18](https://github.com/blakeNaccarato/gradedoc/issues/18))
 
 ### Dependencies
 

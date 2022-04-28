@@ -7,8 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- Update rich requirement from \~=12.0.0 to \~=12.0.1
-- Handle `com_error` in a number of places. Still need to reduce duplication of this error-handling code.
+- Nothing yet
+
+## [0.0.9]
+
+### Added
+
+- Handle `com_error` in a number of places. Still need to reduce duplication of this error-handling code
+- Update to upstream dependency `docxrev` fixes `gradedoc close` hang [#18](https://github.com/blakeNaccarato/gradedoc/issues/18)
+
+### Dependencies
+
+- docxrev updated to ~> 0.2.3
+- dynaconf updated to ~> 3.1.8
+- rich updated to ~> 12.3.0
 
 ## [0.0.8]
 
@@ -51,7 +63,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Migrate `grade-me380`
 
-[Unreleased]: https://github.com/blakeNaccarato/gradedoc/compare/0.0.8...HEAD
+[Unreleased]: https://github.com/blakeNaccarato/gradedoc/compare/0.0.9...HEAD
+[0.0.9]: https://github.com/blakeNaccarato/gradedoc/compare/0.0.8...0.0.9
 [0.0.8]: https://github.com/blakeNaccarato/gradedoc/compare/0.0.7...0.0.8
 [0.0.7]: https://github.com/blakeNaccarato/gradedoc/compare/0.0.6...0.0.7
 [0.0.6]: https://github.com/blakeNaccarato/gradedoc/compare/0.0.5...0.0.6

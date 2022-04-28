@@ -1,4 +1,5 @@
 from contextlib import contextmanager
+
 import pywintypes
 
 try:
@@ -26,15 +27,15 @@ def main():
         try:
             fire.Fire(
                 {
-                    "addcom": add_template_comments,
                     "example": copy_example,
-                    "close": close_all,
-                    "delcom": delete_all_comments,
-                    "open": open_all,
-                    "save": save_all,
-                    "pane": toggle_active_review_pane,
                     "active": update_active_grade,
                     "all": update_all_grades,
+                    "addcom": add_template_comments,
+                    "open": open_all,
+                    "save": save_all,
+                    "close": close_all,
+                    "delcom": delete_all_comments,
+                    "pane": toggle_active_review_pane,
                 }
             )
         except pywintypes.com_error as error:

@@ -3,7 +3,7 @@ _commit: ee6058b
 _src_path: gh:blakeNaccarato/copier-python
 github_repo_name: gradedoc
 include_funding: true
-override: false
+override: true
 override_coveragerc: false
 override_env: false
 override_flake8: false

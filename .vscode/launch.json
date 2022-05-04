@@ -24,7 +24,7 @@
       "id": "input",
       "type": "pickString",
       "description": "Select the command to debug",
-      "options": ["active", "all", "open", "save", "close"]
+      "options": ["active", "all", "addcom", "open", "save", "close"]
     }
   ]
 }

@@ -90,6 +90,12 @@ def grade_document(document: docxrev.Document) -> Grade:  # noqa: C901
                 first_match = [match for match in matches if match][0]
                 code = first_match["code"]
                 if "D" not in code:  # Skip if this is a custom deduction
+                    if not config.codes:
+                        raise ValueError(
+                            "No deduction codes found in configs."
+                            "One config file may be overriding another,"
+                            "make sure you don't have an empty 'codes' list."
+                        )
                     try:
                         feedback = config.codes[code]
                     except KeyError as error:

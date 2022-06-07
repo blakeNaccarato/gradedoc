@@ -7,7 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
 - Warn the user if no deduction codes are found when trying to access a code.
+
+### Dependencies
+
+- Update dynaconf requirement from ~=3.1.8 to ~=3.1.9 (<https://github.com/blakeNaccarato/gradedoc/pull/28>)
 
 ## [0.0.9]
 

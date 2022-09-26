@@ -11,12 +11,13 @@
     },
     {
       "name": "gradedoc",
-      "console": "internalConsole",
+      "console": "integratedTerminal",
       "cwd": "${workspaceFolder:Submissions}",
       "type": "python",
       "request": "launch",
       "module": "gradedoc",
-      "args": ["${input:input}"]
+      "args": ["${input:input}"],
+      "justMyCode": false
     }
   ],
   "inputs": [
@@ -24,7 +25,7 @@
       "id": "input",
       "type": "pickString",
       "description": "Select the command to debug",
-      "options": ["active", "all", "addcom", "open", "save", "close"]
+      "options": ["active", "all", "addcom", "delcom", "open", "save", "close"]
     }
   ]
 }

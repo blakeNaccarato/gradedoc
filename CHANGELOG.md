@@ -7,13 +7,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+Nothing yet.
+
+## [0.0.10]
+
 ### Added
 
 - Warn the user if no deduction codes are found when trying to access a code.
 
 ### Dependencies
 
+- Update docxrev requirement from ~=0.2.3 to ~=0.2.4
 - Update dynaconf requirement from ~=3.1.8 to ~=3.1.9 (<https://github.com/blakeNaccarato/gradedoc/pull/28>)
+- Update natsort requirement from ~=8.1.0 to ~=8.2.0 (<https://github.com/blakeNaccarato/gradedoc/pull/30>)
+- Update rich requirement from ~=12.3.0 to ~=12.4.1 (<https://github.com/blakeNaccarato/gradedoc/pull/25>)
+- Update rich requirement from ~=12.4.1 to ~=12.4.3 (<https://github.com/blakeNaccarato/gradedoc/pull/26>)
+- Update rich requirement from ~=12.4.3 to ~=12.4.4 (<https://github.com/blakeNaccarato/gradedoc/pull/27>)
+- Update rich requirement from ~=12.4.4 to ~=12.5.1 (<https://github.com/blakeNaccarato/gradedoc/pull/29>)
 
 ## [0.0.9]
 
@@ -69,7 +79,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Migrate `grade-me380`
 
-[Unreleased]: https://github.com/blakeNaccarato/gradedoc/compare/0.0.9...HEAD
+[Unreleased]: https://github.com/blakeNaccarato/gradedoc/compare/0.0.10...HEAD
+[0.0.10]: https://github.com/blakeNaccarato/gradedoc/compare/0.0.9...0.0.10
 [0.0.9]: https://github.com/blakeNaccarato/gradedoc/compare/0.0.8...0.0.9
 [0.0.8]: https://github.com/blakeNaccarato/gradedoc/compare/0.0.7...0.0.8
 [0.0.7]: https://github.com/blakeNaccarato/gradedoc/compare/0.0.6...0.0.7
